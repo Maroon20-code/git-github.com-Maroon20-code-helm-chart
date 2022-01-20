@@ -1,10 +1,10 @@
-apiVersion: v2
+apiVersion: v1
 appVersion: "1.16.0"
-description: A Helm chart for Kubernetes
+description: A Helm chart for Kubernetes.
+name: dcaf-app
+version: 0.1.0
+source:
+  - https://github.com/Maroon20-code/helm-chart/tree/dcaf-chart
 maintainers:
   - email: marwenghodben@gmail.com
     name: Marwen
-name: dcaf-app
-sources:
-  - https://github.com/Maroon20-code/helm-chart/tree/dcaf-chart
-version: 0.1.0

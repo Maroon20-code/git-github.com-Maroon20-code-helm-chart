@@ -7,4 +7,4 @@ maintainers:
 name: dcaf-app
 sources:
   - https://github.com/Maroon20-code/helm-chart/tree/dcaf-chart
-version:  0.1.0
+version: 0.1.0

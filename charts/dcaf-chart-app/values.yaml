@@ -1,7 +1,6 @@
 images:
   tag: 'latest'
   registry: harbor.comwork.io/dcaf
-
 database:
   port: 5433
   provisionnedStorage: 1Gi
@@ -90,7 +89,6 @@ website2:
     deployment:
       name: 'dcaf-si-ui-app'
       replicas: 1
-
 secret_db:
   POSTGRES_PASSWORD : 'ZGNhZjEyMw=='
   POSTGRES_USER : 'ZGNhZl9hZG1pbg=='
@@ -103,6 +101,5 @@ ingress:
   website2_url:
     si: api-si.marwen.com
     ui: si.marwen.com
-
 namespace: 'dcaf-dev'
 harbor_sercret : 'dcaf-secret'

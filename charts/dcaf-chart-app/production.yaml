@@ -1,0 +1,108 @@
+images:
+  tag: 'latest'
+  registry: harbor.comwork.io/dcaf
+
+database:
+  port: 5433
+  provisionnedStorage: 1Gi
+  dbName: 'dcaf'
+  volume:
+    enabled: true
+  authentication:
+    user: 'dcaf_admin'
+    password: 'somepassword123'
+    host: 'dcaf-si-db-service'
+  service:
+    name: 'dcaf-si-db-service'
+    port: 5433
+    targetPort: 5433
+  secret:
+    name: 'db-secret'
+  deployment:
+    name: 'dcaf-si-db-app'
+    replicas: 3
+jwt:
+  secretKey: 'dcafSiSecretKey'
+server:
+  url: 'http://dcaf-si-service'
+mailing:
+  email: 'dcaf.tn@gmail.com'
+  password: 'protectionEnfance123'
+  port : 587
+  server: 'smtp.gmail.com'
+website:
+  ws:
+    service:
+      name: 'dcaf-ws-service'
+      port: 80
+      targetPort: 8089
+    configmap:
+      name: 'dcaf-ws-env-configuration'
+    deployment:
+      name: 'dcaf-ws-app'
+      replicas: 3
+  ui:
+    WS_URL: "http://dcaf-ws-service:80"
+    WS_SI_URL: "http://dcaf-si-service:80"
+    UI_URL: "https://dcaf.uprodit.com"
+    containerPort: 80
+    service:
+      name: 'dcaf-ui-service'
+      port: 80
+      targetPort: 80
+    configmap:
+      name: 'dcaf-ui-configuration'
+    deployment:
+      name: 'dcaf-ui-app'
+      replicas: 3
+website2:
+  si:
+    SERVER_PORT_WS: "8089"
+    SERVER_PORT_UI: "4200"
+    SERVER_PORT_DB: "5433"
+    SERVER_PORT_SI: "8089"
+    SERVER_PORT_SI_UI: "4300"
+    SI_SERVER_PORT: "5000"
+    SI_SERVER_HOST: "0.0.0.0"
+    WS_URL: "http://dcaf-ws-service:80"
+    WS_SI_URL: "http://dcaf-si-service:80"
+    DCAF_IMAGE_TAG: "devops-test-d91bf4af"
+    url: 'http://dcaf-ui-service'
+    service:
+      name: 'dcaf-si-service'
+      port: 80
+      targetPort: 5000
+    configmap:
+      name: 'dcaf-si-configuration'
+      name2: 'dcaf-si-env-configuration'
+    deployment:
+      name: 'dcaf-si-app'
+      replicas: 3
+  ui:
+    WS_SI_URL: "http://dcaf-si-service:80"
+    containerPort: 80
+    service:
+      name: 'dcaf-si-ui-service'
+      port: 80
+      targetPort: 80
+    configmap:
+      name: 'dcaf-si-ui-configuration'
+    deployment:
+      name: 'dcaf-si-ui-app'
+      replicas: 3
+
+secret_db:
+  POSTGRES_PASSWORD : 'ZGNhZjEyMw=='
+  POSTGRES_USER : 'ZGNhZl9hZG1pbg=='
+  POSTGRES_DB : 'ZGNhZg=='
+ingress:
+  port_number: "80"
+  website_url:
+    ws: api-ws.marwen.com
+    ui: ui.marwen.com
+  website2_url:
+    si: api-si.marwen.com
+    ui: si.marwen.com
+
+namespace: 'dcaf-prod'
+harbor_sercret : 'dcaf-secret'

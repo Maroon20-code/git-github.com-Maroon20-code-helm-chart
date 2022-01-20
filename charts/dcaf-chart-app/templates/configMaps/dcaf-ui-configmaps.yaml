@@ -7,3 +7,4 @@ data:
   WS_URL: "{{ .Values.website.ui.WS_URL }}"
   WS_SI_URL: "{{ .Values.website.ui.WS_SI_URL }}"
   UI_URL: "{{ .Values.website.ui.UI_URL }}"
+  

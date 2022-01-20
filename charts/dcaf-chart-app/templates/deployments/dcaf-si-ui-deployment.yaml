@@ -23,3 +23,4 @@ spec:
                 name: {{ .Values.website2.ui.configmap.name }}
       imagePullSecrets:
         - name: {{ .Values.harbor_sercret }}
+        

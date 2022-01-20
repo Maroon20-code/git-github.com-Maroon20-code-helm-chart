@@ -10,4 +10,3 @@ spec:
       name: http
       port: {{ .Values.website.ui.service.port }}
       targetPort: {{ .Values.website.ui.service.targetPort }}
-      

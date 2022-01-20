@@ -15,4 +15,3 @@ spec:
                 name: {{ .Values.website.ws.service.name }}
                 port:
                   number: {{ .Values.ingress.port_number }}
-                  

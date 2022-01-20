@@ -14,4 +14,3 @@ data:
   WS_URL: "{{ .Values.website2.si.WS_URL }}"
   WS_SI_URL: "{{ .Values.website2.si.WS_SI_URL }}"
   DCAF_IMAGE_TAG: "{{ .Values.website2.si.DCAF_IMAGE_TAG }}"
-  

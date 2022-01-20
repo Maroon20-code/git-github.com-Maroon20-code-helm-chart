@@ -43,4 +43,3 @@ spec:
   {{- if eq .Values.database.volume.enabled true -}}
   {{- include "volume-claim-si-db" . | indent 2 }}
   {{- end -}}
-  

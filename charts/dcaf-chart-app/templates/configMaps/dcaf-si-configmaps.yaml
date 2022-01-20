@@ -32,4 +32,3 @@ data:
         "password": "{{ .Values.mailing.password }}"
     }
     }
-    

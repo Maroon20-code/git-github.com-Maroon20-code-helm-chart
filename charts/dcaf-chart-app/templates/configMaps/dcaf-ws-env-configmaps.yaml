@@ -10,4 +10,3 @@ data:
   SPRING_DATASOURCE_URL: "jdbc:postgresql://dcaf-si-db-service:5433/{{ .Values.database.dbName }}"
   SPRING_DATASOURCE_USERNAME: "{{ .Values.database.authentication.user }}"
   SPRING_DATASOURCE_PASSWORD: "{{ .Values.database.authentication.password }}"
-  

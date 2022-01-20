@@ -5,4 +5,3 @@ metadata:
   namespace: {{ .Values.namespace }}
 data:
   WS_SI_URL: "{{ .Values.website2.si.WS_SI_URL }}"
-  

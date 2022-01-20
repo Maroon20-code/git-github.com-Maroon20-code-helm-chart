@@ -9,4 +9,3 @@ spec:
     - protocol: TCP
       port: {{ .Values.database.service.port }}
       targetPort: {{ .Values.database.service.targetPort }}
-      

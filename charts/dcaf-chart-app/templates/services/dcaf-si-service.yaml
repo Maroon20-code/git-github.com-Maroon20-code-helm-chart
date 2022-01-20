@@ -10,4 +10,3 @@ spec:
       name: http
       port: {{ .Values.website2.si.service.port }}
       targetPort: {{ .Values.website2.si.service.targetPort }}
-      

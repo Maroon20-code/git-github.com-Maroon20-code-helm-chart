@@ -42,4 +42,4 @@ spec:
         - name: {{ .Values.harbor_sercret }}
   {{- if eq .Values.database.volume.enabled true -}}
   {{- include "volume-claim-si-db" . | indent 2 }}
-  {{- end -}
+  {{- end }

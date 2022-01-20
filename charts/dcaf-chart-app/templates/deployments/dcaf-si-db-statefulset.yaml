@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ .Values.database.deployment.name }}
+  namespace: {{ .Values.namespace }}
+  labels: {{- include "si-db-label" . | nindent 3 }}
+spec:
+  serviceName: {{ .Values.database.service.name }}
+  replicas: {{ .Values.database.deployment.replicas | int }}
+  selector:
+    matchLabels: {{- include "si-db-label" . | nindent 5 }}
+  template:
+    metadata:
+      labels: {{- include "si-db-label" . | nindent 7 }}
+    spec:
+      containers:
+        - name: dcaf-si-db-container
+          image: {{ .Values.images.registry }}/dcaf_si_db:{{ .Values.images.tag }}
+          env:
+
+            - name: POSTGRES_USER
+              valueFrom:
+                  secretKeyRef:
+                    name: {{ .Values.database.secret.name }}
+                    key: POSTGRES_USER
+            - name: POSTGRES_DB
+              valueFrom:
+                  secretKeyRef:
+                    name: {{ .Values.database.secret.name }}
+                    key: POSTGRES_DB
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                  secretKeyRef:
+                    name: {{ .Values.database.secret.name }}
+                    key: POSTGRES_PASSWORD
+          ports:
+            - containerPort: {{ .Values.database.port }}
+          {{- if eq .Values.database.volume.enabled true -}}
+          {{- include "volume-si-db" . | indent 10 }}
+          {{- end }}
+      imagePullSecrets:
+        - name: {{ .Values.harbor_sercret }}
+  {{- if eq .Values.database.volume.enabled true -}}
+  {{- include "volume-claim-si-db" . | indent 2 }}
+  {{- end -}}

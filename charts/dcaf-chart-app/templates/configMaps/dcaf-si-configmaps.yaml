@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.website2.si.configmap.name }}
+  namespace: {{ .Values.namespace }}
+data:
+  config.json: |
+    {
+    "db":{
+        "user":"{{ .Values.database.authentication.user }}",
+        "password":"{{ .Values.database.authentication.password }}",
+        "host": "{{ .Values.database.authentication.host }}",
+        "port":"{{ .Values.database.port }}",
+        "database":"{{ .Values.database.dbName }}"
+    },
+    "jwt": {
+        "secretKey" : "{{ .Values.jwt.secretKey }}"
+    },
+    "server": {
+        "url": "{{ .Values.server.url }}"
+    },
+    "ui": {
+        "url" : "{{ .Values.website2.ui.url }}"
+    },
+    "authentication": {
+        "reset.password.size" : 24
+    },
+    "email": {
+        "port": {{ .Values.mailing.port }} ,
+        "server": {{ .Values.mailing.server }} ,
+        "username": "{{ .Values.mailing.email }}",
+        "password": "{{ .Values.mailing.password }}"
+    }
+    }

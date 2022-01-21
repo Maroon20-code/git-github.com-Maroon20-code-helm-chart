@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: dcaf-ws-container
-          image: {{ .Values.images.registry }}/dcaf-ws:{{ .Values.images.tag }}
+          image: {{ .Values.images.registry }}/dcaf_ws:{{ .Values.images.tag }}
           imagePullPolicy: Always
           ports:
             - containerPort: {{ .Values.website2.si.SERVER_PORT_WS }}

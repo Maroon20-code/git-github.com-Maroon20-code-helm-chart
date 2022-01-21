@@ -1,6 +1,7 @@
 images:
-  tag: 'latest'
-  registry: harbor.comwork.io/dcaf
+  tag: 'master-ac8a6e14'
+  ws_tag: 'production-5c054ed6'
+  registry: rg.fr-par.scw.cloud/dcaf
 
 database:
   port: 5433

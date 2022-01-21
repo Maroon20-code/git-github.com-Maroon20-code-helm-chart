@@ -2,7 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ .Values.website.ui.deployment.name }}
-  namespace: {{ .Values.namespace }}
   labels: {{- include "ui-label" . | nindent 3 }}
 spec:
   replicas: {{ .Values.website.ui.deployment.replicas | int }}

@@ -104,5 +104,4 @@ ingress:
     si: api-si.marwen.com
     ui: si.marwen.com
 
-namespace: 'dcaf-dev'
 harbor_sercret: 'dcaf-secret'

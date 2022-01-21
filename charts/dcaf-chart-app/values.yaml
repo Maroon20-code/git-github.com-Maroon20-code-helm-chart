@@ -105,4 +105,4 @@ ingress:
     si: api-si.marwen.com
     ui: si.marwen.com
 
-harbor_sercret: 'dcaf-secret'
+harbor_sercret: 'registry-secret'

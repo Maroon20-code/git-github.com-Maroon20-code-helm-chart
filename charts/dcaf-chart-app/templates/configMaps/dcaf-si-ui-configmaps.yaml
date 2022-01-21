@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: {{ .Values.website2.ui.configmap.name }}
-data:
-  WS_SI_URL: "{{ .Values.website2.si.WS_SI_URL }}"

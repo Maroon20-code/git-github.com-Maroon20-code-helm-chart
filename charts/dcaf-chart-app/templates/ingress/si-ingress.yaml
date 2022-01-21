@@ -2,7 +2,6 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: si-ingress
-  namespace: {{ .Values.namespace }}
 spec:
   rules:
     - host: {{ .Values.ingress.website2_url.ui }}

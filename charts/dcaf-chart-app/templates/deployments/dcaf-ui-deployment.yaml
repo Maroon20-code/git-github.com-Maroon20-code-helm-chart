@@ -12,13 +12,8 @@ spec:
       labels: {{- include "ui-label" . | nindent 7 }}
     spec:
       containers:
-      - name: dcaf-ui-container
-        image: {{ .Values.images.registry }}/dcaf_ui:{{ .Values.images.tag }}
+      - name: nginx-ui
+        image: {{ .Values.images.registry }}:{{ .Values.images.tag }}
         imagePullPolicy: Always
         ports:
           - containerPort: {{ .Values.website.ui.containerPort }}
-        envFrom:
-          - configMapRef:
-              name: {{ .Values.website.ui.configmap.name }}
-      imagePullSecrets:
-        - name: {{ .Values.harbor_sercret }}

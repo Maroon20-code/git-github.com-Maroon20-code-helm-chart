@@ -1,0 +1,19 @@
+images:
+  tag: 'latest'
+  registry: mghodben/nginx
+
+website:
+  ui:
+    containerPort: 80
+    service:
+      name: 'nginx-ui-service'
+      port: 80
+      targetPort: 80
+    deployment:
+      name: 'nginx-ui-app'
+      replicas: 1
+
+ingress:
+  port_number: "80"
+  website_url:
+    ui: ui.marwen.com

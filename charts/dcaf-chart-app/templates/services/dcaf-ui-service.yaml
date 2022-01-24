@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.website.ui.service.name }}
+spec:
+  selector: {{- include "ui-label" . | nindent 3 }}
+  ports:
+    - protocol: TCP
+      name: http
+      port: {{ .Values.website.ui.service.port }}
+      targetPort: {{ .Values.website.ui.service.targetPort }}

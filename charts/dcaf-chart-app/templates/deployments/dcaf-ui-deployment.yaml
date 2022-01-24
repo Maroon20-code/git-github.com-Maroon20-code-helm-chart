@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.website.ui.deployment.name }}
+  labels: {{- include "ui-label" . | nindent 3 }}
+spec:
+  replicas: {{ .Values.website.ui.deployment.replicas | int }}
+  selector:
+    matchLabels: {{- include "ui-label" . | nindent 5 }}
+  template:
+    metadata:
+      labels: {{- include "ui-label" . | nindent 7 }}
+    spec:
+      containers:
+      - name: nginx-ui
+        image: {{ .Values.images.registry }}:{{ .Values.images.tag }}
+        imagePullPolicy: Always
+        ports:
+          - containerPort: {{ .Values.website.ui.containerPort }}

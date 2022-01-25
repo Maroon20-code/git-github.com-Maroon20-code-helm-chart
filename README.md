@@ -9,4 +9,4 @@
 ## to install the chart just follow this command
 
 * helm repo add chart-repo https://maroon20-code.github.io/helm-chart/charts/nginx-app-chart
-*  helm install chart-repo nginx-app
+*  helm install nginx-app chart-repo/nginx-app

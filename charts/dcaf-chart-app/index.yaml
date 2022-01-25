@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  nginx-app:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-01-25T09:51:14.514746865+01:00"
+    description: A Helm chart for Kubernetes
+    digest: b54e51a18783abf34395d38f0f2ab899893d46e194cc6a4ed44473eaa613a149
+    maintainers:
+    - email: marwenghodben@gmail.com
+      name: marwen
+    name: nginx-app
+    type: application
+    urls:
+    - nginx-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-01-25T09:51:14.514471159+01:00"

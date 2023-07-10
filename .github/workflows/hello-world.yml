@@ -1,0 +1,16 @@
+name: Print Hello World
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  hello-world:
+    runs-on: github-action-comwork
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Print Hello World
+        run: echo "Hello, world!"

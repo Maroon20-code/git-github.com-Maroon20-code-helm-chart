@@ -6,7 +6,7 @@ on:
 
 jobs:
   hello-world:
-    runs-on: github-action-comwork
+    runs-on: helm-chart-dev
 
     steps:
       - name: Checkout repository
